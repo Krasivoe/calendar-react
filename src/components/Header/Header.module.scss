@@ -1,0 +1,74 @@
+@use "src/styles/utils" as *;
+
+.header {
+  background: $neutral;
+  box-shadow: 0 4px 5px -5px $dark2;
+  .container {
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+  }
+  .control {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 48px;
+  }
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .button {
+    width: 80px;
+    height: 26px;
+  }
+  .search {
+    display: flex;
+    gap: 10px;
+    .inputArea {
+      position: relative;
+      height: 28px;
+    }
+  }
+  .img {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .input {
+    width: 210px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    .container {
+      height: 110px;
+      align-items: center;
+    }
+    .control {
+      justify-content: center;
+      gap: 20px;
+    }
+    .buttons {
+      gap: 30px;
+    }
+    .button {
+      width: 80px;
+      height: 28px;
+    }
+    .input {
+      width: 230px;
+      height: 30px;
+    }
+    .img {
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+    }
+  }
+}

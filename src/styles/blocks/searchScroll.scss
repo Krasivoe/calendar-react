@@ -1,0 +1,29 @@
+@use "../_config/variables" as *;
+
+#searchScroll {
+  .simplebar-content {
+    max-height: 302px;
+  }
+
+  .simplebar-track {
+    &.simplebar-vertical {
+      top: 7px;
+      bottom: 7px;
+      margin-right: 2px;
+    }
+  }
+
+  .simplebar-scrollbar {
+    min-height: 35px;
+    &.simplebar-visible::before,
+    &::before {
+      width: 6px;
+      border-radius: 10px;
+      background: #c4c4c4;
+      opacity: 1;
+    }
+    &:hover::before {
+      background: $dark;
+    }
+  }
+}

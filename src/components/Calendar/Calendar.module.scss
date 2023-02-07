@@ -1,0 +1,18 @@
+@use "src/styles/utils" as *;
+
+.calendar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  @include font14();
+  font-weight: 400;
+  color: $dark;
+}
+
+@media screen and (max-width: 480px) {
+  .calendar {
+    @include font12();
+  }
+}

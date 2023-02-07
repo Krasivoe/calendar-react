@@ -1,0 +1,70 @@
+@use "../../../styles/utils" as *;
+
+.day {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  width: 14.28%;
+  height: 120px;
+  outline: 1px solid $dark2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $white;
+  transition: all 0.3s;
+  cursor: pointer;
+  .title,
+  .people {
+    width: 100%;
+    height: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .people {
+    max-height: 48px;
+  }
+  .title {
+    color: $dark2;
+  }
+  &.selected {
+    z-index: 1;
+    box-shadow: 0 0 10px 2px #0271c7;
+  }
+  &.fill {
+    background: $blue;
+    &.selected {
+      background: $blue;
+    }
+  }
+  &:hover {
+    background: $neutral;
+  }
+  &.fill:hover {
+    background: $blue2;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .day {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .day {
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .day {
+    height: 65px;
+    .title,
+    .people {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}

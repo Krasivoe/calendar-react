@@ -1,0 +1,72 @@
+@use "../../../styles/utils" as *;
+
+.view {
+  position: absolute;
+  z-index: -1;
+  width: 290px;
+  height: 302px;
+  @include flex-column();
+  gap: 8px;
+  @include font14();
+  font-weight: 300;
+  color: $dark2;
+  visibility: hidden;
+  opacity: 0;
+  //transition: opacity 0.2s linear, z-index 0.2s linear;
+  &.open {
+    opacity: 1;
+    z-index: 3;
+    visibility: visible;
+  }
+  .info {
+    @include flex-column();
+    gap: 16px;
+  }
+  .title {
+    @include font18();
+    font-weight: 400;
+  }
+  .peoples {
+    @include flex-column();
+    gap: 4px;
+  }
+  .people {
+    color: $dark;
+  }
+  .list {
+    min-height: 14px;
+    @include font12();
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 1s;
+    &:hover + .tooltip.visible {
+      opacity: 1;
+      z-index: 0;
+      transition: all 0.2s 1s;
+    }
+  }
+  .tooltip {
+    position: absolute;
+    z-index: -1;
+    top: 135px;
+    width: 90%;
+    min-height: 30px;
+    padding: 6px;
+    @include font12();
+    font-weight: 400;
+    word-break: break-word;
+    background: $blue;
+    border: 1px solid $dark;
+    border-radius: 10px;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .view {
+    height: 310px;
+    gap: 12px;
+  }
+}

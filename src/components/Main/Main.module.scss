@@ -1,0 +1,13 @@
+@use "src/styles/utils" as *;
+
+.content {
+  min-height: 650px;
+  padding-bottom: 60px;
+  @include flex-column();
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    min-height: 500px;
+  }
+}

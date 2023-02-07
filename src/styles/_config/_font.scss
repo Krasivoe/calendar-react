@@ -1,0 +1,22 @@
+@mixin font() {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+@mixin font18() {
+  @include font();
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@mixin font14() {
+  @include font();
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin font12() {
+  @include font();
+  font-size: 12px;
+  line-height: 14px;
+}
