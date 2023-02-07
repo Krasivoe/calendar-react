@@ -12,27 +12,32 @@
   color: $dark2;
   visibility: hidden;
   opacity: 0;
-  //transition: opacity 0.2s linear, z-index 0.2s linear;
+
   &.open {
     opacity: 1;
     z-index: 3;
     visibility: visible;
   }
+
   .info {
     @include flex-column();
     gap: 16px;
   }
+
   .title {
     @include font18();
     font-weight: 400;
   }
+
   .peoples {
     @include flex-column();
     gap: 4px;
   }
+
   .people {
     color: $dark;
   }
+
   .list {
     min-height: 14px;
     @include font12();
@@ -41,12 +46,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all 1s;
+
     &:hover + .tooltip.visible {
       opacity: 1;
       z-index: 0;
       transition: all 0.2s 1s;
     }
   }
+
   .tooltip {
     position: absolute;
     z-index: -1;

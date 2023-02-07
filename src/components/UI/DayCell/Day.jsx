@@ -35,13 +35,11 @@ const Day = ({ children, isFill, eventData, eventRef, viewRef, setModalActive })
   return (
     <div className={isFill ? [styles.day, styles.fill].join(' ') : styles.day} onClick={showPopup}>
       {children}
-      {isFill ? (
+      {isFill && (
         <>
           <div className={styles.title}>{eventData.event}</div>
           <div className={styles.people}>{eventData.people}</div>
         </>
-      ) : (
-        <></>
       )}
     </div>
   );

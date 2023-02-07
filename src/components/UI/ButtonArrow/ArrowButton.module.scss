@@ -9,16 +9,16 @@
   box-shadow: inset 0 0 1px 1px rgb(0 0 0 / 0.25);
   border-radius: 4px;
   transition: background-color 0.3s linear;
+
   &:hover {
-    background-color: $dark;
-    background-image: url("../../../assets/images/arrowNavigate/arrowWhite.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+    background: $dark url("../../../assets/images/arrowNavigate/arrowWhite.svg") no-repeat center;
   }
+
   &:active {
     background: $neutral2 url("../../../assets/images/arrowNavigate/arrowWhite.svg") no-repeat center;
     box-shadow: none;
   }
+
   &:disabled {
     background: $white url("../../../assets/images/arrowNavigate/arrowGray.svg") no-repeat center;
     box-shadow: none;

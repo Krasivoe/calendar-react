@@ -8,23 +8,24 @@ import { CalendarContext } from '../../../context/index.js';
 
 const ViewPopup = React.forwardRef((props, ref) => {
   const { events, setEvents } = useContext(CalendarContext);
-  const { clicked } = useContext(CalendarContext);
 
   return (
     <div className={[styles.view, 'popup'].join(' ')} ref={ref} onClick={e => e.stopPropagation()}>
       <img className="popup__arrow" src={logoArrow} alt="arrow" />
+
       <div className="close">
         <div className="close__cross" onClick={() => props.setModalActive(false)}>
           <img className="popup__img" src={logoCross} alt="close" />
         </div>
       </div>
-      <ViewPopupInfo clicked={clicked} events={events} />
+
+      <ViewPopupInfo events={events} />
+
       <ViewPopupButtons
         modalActive={props.modalActive}
         setModalActive={props.setModalActive}
         events={events}
         setEvents={setEvents}
-        clicked={clicked}
       />
     </div>
   );

@@ -4,20 +4,25 @@
   gap: 10px;
   width: 100%;
   height: 48px;
+
   .month {
     display: flex;
     align-items: center;
     gap: 24px;
   }
+
   .date {
     min-width: 125px;
     font-weight: 400;
     text-align: center;
   }
+
   .btnPrev {
     transform: rotate(180deg);
   }
+
   .button {
+    width: 60px;
   }
 }
 
@@ -27,12 +32,14 @@
     height: 55px;
     margin-top: 10px;
     margin-bottom: 15px;
+
     .month {
       gap: 14px;
       & button {
         height: 24px;
       }
     }
+
     .button {
       width: 65px;
     }

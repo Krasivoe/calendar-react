@@ -1,7 +1,10 @@
 import styles from './ViewPopup.module.scss';
 import moment from 'moment/moment.js';
+import { useContext } from 'react';
+import { CalendarContext } from '../../../context/index.js';
 
-const ViewPopupInfo = ({ clicked, events }) => {
+const ViewPopupInfo = ({ events }) => {
+  const { clicked } = useContext(CalendarContext);
   const event = events.find(e => e.date === clicked);
 
   return (

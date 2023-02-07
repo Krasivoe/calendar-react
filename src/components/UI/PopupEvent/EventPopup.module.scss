@@ -9,18 +9,20 @@
   gap: 24px;
   opacity: 0;
   visibility: hidden;
-  //transition: opacity 0.2s linear, z-index 0.2s linear;
+
   &.open {
     opacity: 1;
     z-index: 3;
     visibility: visible;
   }
+
   .top,
   .inputs,
   .bottom {
     @include flex-column();
     gap: 8px;
   }
+
   .input {
     width: 100%;
     height: 28px;

@@ -1,14 +1,15 @@
 import stylesInput from '../Input/Input.module.scss';
-import stylesBtn from '../ButtonExtra/ExtraButton.module.scss';
 import ExtraButton from '../ButtonExtra/ExtraButton.jsx';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { CalendarContext } from '../../../context/index.js';
 
-const ViewPopupButtons = ({ setModalActive, events, setEvents, clicked }) => {
+const ViewPopupButtons = ({ setModalActive, events, setEvents }) => {
+  const { clicked } = useContext(CalendarContext);
   const [areaValue, setAreaValue] = useState('');
 
   useEffect(() => {
     const event = events.find(e => e.date === clicked);
-    setAreaValue(event?.description);
+    event && setAreaValue(event?.description);
   }, [clicked, events]);
 
   const addDescription = () => {
@@ -37,18 +38,8 @@ const ViewPopupButtons = ({ setModalActive, events, setEvents, clicked }) => {
         onChange={event => setAreaValue(event.target.value)}
       />
       <div className="popup__buttons">
-        <ExtraButton
-          className={[stylesBtn.btnExtra, 'popup__button'].join(' ')}
-          onClick={addDescription}
-        >
-          Готово
-        </ExtraButton>
-        <ExtraButton
-          className={[stylesBtn.btnExtra, 'popup__button'].join(' ')}
-          onClick={deleteEvent}
-        >
-          Удалить
-        </ExtraButton>
+        <ExtraButton onClick={addDescription}>Готово</ExtraButton>
+        <ExtraButton onClick={deleteEvent}>Удалить</ExtraButton>
       </div>
     </>
   );

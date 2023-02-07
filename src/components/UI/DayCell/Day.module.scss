@@ -14,6 +14,7 @@
   background: $white;
   transition: all 0.3s;
   cursor: pointer;
+
   .title,
   .people {
     width: 100%;
@@ -22,25 +23,31 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   .people {
     max-height: 48px;
   }
+
   .title {
     color: $dark2;
   }
+
   &.selected {
     z-index: 1;
     box-shadow: 0 0 10px 2px #0271c7;
   }
+
   &.fill {
     background: $blue;
     &.selected {
       background: $blue;
     }
   }
+
   &:hover {
     background: $neutral;
   }
+
   &.fill:hover {
     background: $blue2;
   }

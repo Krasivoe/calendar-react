@@ -21,17 +21,21 @@ const QuickPopup = ({ active, setActive }) => {
   useOutsideClick(quickRef, setActive, active);
 
   useEffect(() => {
-    setValue('');
-    setError({ isError: false, placeholder: '16 октября, Кутеж, Олег' });
+    if (!active) {
+      setValue('');
+      setError({ isError: false, placeholder: '16 октября, Кутеж, Олег' });
+    }
   }, [active]);
 
   const createEvent = () => {
     const inputValue = value.trim().split(', ');
+
     if (!value || inputValue.length < 3) {
       setValue('');
       setError({ isError: true, placeholder: 'Укажите событие через 2 разделителя' });
       return;
     }
+
     const date = getDateQuick(inputValue[0]);
     const event = inputValue[1];
     const people = inputValue.slice(2, inputValue.length).join(', ');
@@ -41,6 +45,7 @@ const QuickPopup = ({ active, setActive }) => {
       setError({ isError: true, placeholder: 'Некорректная дата' });
       return;
     }
+
     if (events.find(ev => ev.date === date)) {
       // Перезапись события
       const newEvents = events.map(item => {
@@ -81,11 +86,7 @@ const QuickPopup = ({ active, setActive }) => {
         </div>
       </div>
       <Input
-        className={
-          error.isError
-            ? [styles.input, stylesInput.input, stylesInput.error].join(' ')
-            : [styles.input, stylesInput.input].join(' ')
-        }
+        className={error.isError ? [styles.input, stylesInput.error].join(' ') : styles.input}
         value={value}
         onChange={e => setValue(e.target.value)}
         onClick={() => setError({ isError: false, placeholder: '16 октября, Кутеж, Олег' })}

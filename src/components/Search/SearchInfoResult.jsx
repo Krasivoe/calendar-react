@@ -1,9 +1,9 @@
 import styles from './Search.module.scss';
 
-const SearchInfoResult = ({ content }) => {
+const SearchInfoResult = ({ children }) => {
   return (
     <li className={styles.info}>
-      <div>{content}</div>
+      <div>{children}</div>
     </li>
   );
 };

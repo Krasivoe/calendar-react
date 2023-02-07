@@ -7,6 +7,7 @@ export const useDay = (date, events) => {
     const endDay = moment(date).endOf('month').endOf('week');
     const result = [];
     let count = 0;
+
     while (!startDay.isAfter(endDay)) {
       const day = {};
 
@@ -31,6 +32,7 @@ export const useDay = (date, events) => {
       result.push(day);
       startDay.add(1, 'day');
     }
+
     return result;
   }, [date, events]);
 };

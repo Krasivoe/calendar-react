@@ -3,7 +3,11 @@ import styles from './Input.module.scss';
 
 const Input = React.forwardRef((props, ref) => {
   return (
-    <input ref={ref} {...props} className={props.className ? props.className : styles.input}/>
+    <input
+      {...props}
+      ref={ref}
+      className={props.className ? [styles.input, props.className].join(' ') : styles.input}
+    />
   );
 });
 

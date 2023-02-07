@@ -29,7 +29,7 @@ const Search = ({ results, active, setActive, setDate }) => {
               />
             ))
           ) : (
-            <SearchInfoResult content={'Результаты отсутствуют...'} />
+            <SearchInfoResult>{'Результаты отсутствуют...'}</SearchInfoResult>
           )}
         </ul>
       </div>

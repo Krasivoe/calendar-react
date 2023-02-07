@@ -3,14 +3,12 @@ import logoCross from '../../../assets/images/popup/cross.svg';
 import logoArrow from '../../../assets/images/popup/arrowLeft.svg';
 import styles from './EventPopup.module.scss';
 import stylesInput from '../Input/Input.module.scss';
-import stylesBtn from '../ButtonExtra/ExtraButton.module.scss';
 import EventPopupInputs from './EventPopupInputs.jsx';
 import ExtraButton from '../ButtonExtra/ExtraButton.jsx';
 import { CalendarContext } from '../../../context/index.js';
 
 const EventPopup = React.forwardRef((props, ref) => {
-  const { events, setEvents } = useContext(CalendarContext);
-  const { clicked } = useContext(CalendarContext);
+  const { events, setEvents, clicked } = useContext(CalendarContext);
   const [eventValue, setEventValue] = useState('');
   const [peopleValue, setPeopleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
@@ -59,15 +57,14 @@ const EventPopup = React.forwardRef((props, ref) => {
   return (
     <div className={[styles.event, 'popup'].join(' ')} ref={ref} onClick={e => e.stopPropagation()}>
       <img className="popup__arrow" src={logoArrow} alt="arrow" />
+
       <div className={styles.top}>
         <div className="close">
           <div className="close__cross" onClick={closeEvent}>
             <img className="popup__img" src={logoCross} alt="close" />
           </div>
         </div>
-
         <EventPopupInputs
-          date={clicked}
           eventValue={eventValue}
           setEventValue={setEventValue}
           peopleValue={peopleValue}
@@ -87,12 +84,8 @@ const EventPopup = React.forwardRef((props, ref) => {
           placeholder="Описание"
         />
         <div className="popup__buttons">
-          <ExtraButton className={stylesBtn.btnExtra} onClick={createEvent}>
-            Готово
-          </ExtraButton>
-          <ExtraButton className={stylesBtn.btnExtra} onClick={clearEvent}>
-            Удалить
-          </ExtraButton>
+          <ExtraButton onClick={createEvent}>Готово</ExtraButton>
+          <ExtraButton onClick={clearEvent}>Удалить</ExtraButton>
         </div>
       </div>
     </div>

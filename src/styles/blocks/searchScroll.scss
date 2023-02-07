@@ -15,6 +15,7 @@
 
   .simplebar-scrollbar {
     min-height: 35px;
+
     &.simplebar-visible::before,
     &::before {
       width: 6px;
@@ -22,6 +23,7 @@
       background: #c4c4c4;
       opacity: 1;
     }
+
     &:hover::before {
       background: $dark;
     }

@@ -10,9 +10,9 @@ import moment from 'moment';
 import { useOutsideClick } from '../../hooks/useOutsideClick.js';
 
 const HeaderSearch = ({ searchActive, setSearchActive }) => {
+  const { events, setDate } = useContext(CalendarContext);
   const searchRef = useRef(null);
   const inputRef = useRef(null);
-  const { events, setDate } = useContext(CalendarContext);
   const [filter, setFilter] = useState('');
   const [results, setResults] = useState([]);
   const resultsData = useSearchResults(events, filter);
@@ -32,7 +32,7 @@ const HeaderSearch = ({ searchActive, setSearchActive }) => {
     if (inputRef.current) inputRef.current.focus();
   };
 
-  const searchFirstResult = () => {
+  const setFirstSearchResult = () => {
     const result = results[0];
     if (searchActive) {
       if (result) {
@@ -47,14 +47,10 @@ const HeaderSearch = ({ searchActive, setSearchActive }) => {
 
   return (
     <div className={styles.search} ref={searchRef}>
-      <img className={styles.img} src={searchLogo} alt="Поиск" onClick={searchFirstResult} />
+      <img className={styles.img} src={searchLogo} alt="Поиск" onClick={setFirstSearchResult} />
       <div className={styles.inputArea}>
         <Input
-          className={
-            searchActive
-              ? [styles.input, stylesInput.input, stylesInput.focus].join(' ')
-              : [styles.input, stylesInput.input].join(' ')
-          }
+          className={searchActive ? [styles.input, stylesInput.focus].join(' ') : styles.input}
           ref={inputRef}
           value={filter}
           onChange={e => setFilter(e.target.value)}

@@ -19,16 +19,12 @@ const HeaderButtons = ({ quickActive, setQuickActive }) => {
   return (
     <div className={styles.buttons}>
       <MainButton
-        className={
-          quickActive
-            ? [styles.button, stylesBtn.btnMain, stylesBtn.active].join(' ')
-            : [styles.button, stylesBtn.btnMain].join(' ')
-        }
+        className={quickActive ? [styles.button, stylesBtn.active].join(' ') : styles.button}
         onClick={openQuickPopup}
       >
         Добавить
       </MainButton>
-      <MainButton onClick={updateEvents} className={[styles.button, stylesBtn.btnMain].join(' ')}>
+      <MainButton className={styles.button} onClick={updateEvents}>
         Обновить
       </MainButton>
       <QuickPopup active={quickActive} setActive={setQuickActive} />
