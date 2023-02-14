@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/calendar-react/static/css/main.85822769.css",
+    "main.js": "/calendar-react/static/js/main.50634007.js",
+    "static/media/cross.svg": "/calendar-react/static/media/cross.77906549ac56a3358a9c.svg",
+    "static/media/search.svg": "/calendar-react/static/media/search.d593961f6f5051dcba7127e0c5d99f2d.svg",
+    "index.html": "/calendar-react/index.html",
+    "static/media/arrowGray.svg": "/calendar-react/static/media/arrowGray.1590b5a762e9b5f8f4c5.svg",
+    "static/media/arrowWhite.svg": "/calendar-react/static/media/arrowWhite.4063466557e3d52eab0a.svg",
+    "static/media/arrowDark.svg": "/calendar-react/static/media/arrowDark.80927edb64c43f877d87.svg",
+    "static/media/arrowLeft.svg": "/calendar-react/static/media/arrowLeft.e3a1c108a5ffb31be9f8c14af3bd0e8a.svg",
+    "static/media/arrowTop.svg": "/calendar-react/static/media/arrowTop.24b0ec0e4df2b1b85f0d.svg",
+    "main.85822769.css.map": "/calendar-react/static/css/main.85822769.css.map",
+    "main.50634007.js.map": "/calendar-react/static/js/main.50634007.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85822769.css",
+    "static/js/main.50634007.js"
+  ]
+}
